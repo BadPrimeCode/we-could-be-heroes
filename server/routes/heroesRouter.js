@@ -25,7 +25,7 @@ router.get('/enum', function(req, res) {
 // add new hero process
 router.post('/', function(req, res) {
   console.log('in hero add');
-  console.log('req.body: ', req.body);
+  console.log('added hero: ', req.body);
 
   var hero = req.body;
 
@@ -51,13 +51,12 @@ router.post('/', function(req, res) {
 
 // delete individual hero
 router.delete('/:id', function(req, res) {
-    console.log("params: ", req.params);
-    Hero.remove({"_id": req.params.id}, function(err) {
+    Hero.remove({'_id': req.params.id}, function(err) {
       if(err){
         console.log('error occurred:', err);
         res.sendStatus(500);
       }else{
-        console.log('removed: ', req.params.id);
+        console.log('removed hero: ', req.params);
         res.sendStatus(200);
       }
     });

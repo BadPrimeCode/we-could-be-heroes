@@ -21,5 +21,6 @@ myApp.controller('heroesController', ['$scope', '$http', function($scope, $http)
     }, function errorCallback(res) {
       console.log(res);
     });
+    location.reload();
   };
 }]);

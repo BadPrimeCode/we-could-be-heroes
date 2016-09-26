@@ -15,23 +15,22 @@ myApp.controller('addController', ['$scope', '$http', function($scope, $http) {
       method: 'POST',
       url: '/heroes',
       data: objectToSend
-    }).then(function successCallback(response) {
-      console.log('post resp =', response);
-    }, function errorCallback(response) {
-      console.log('err');
+    }).then(function success(res) {
+      console.log('post res: ', res);
+    }, function error(res) {
+      console.log('error: ', res);
     });
   };
 
   $http({
     method: 'GET',
     url: '/heroes/enum'
-  }).then(function successCallback(response) {
-    $scope.enum = response.data.map(function(type) {
+  }).then(function success(res) {
+    $scope.enum = res.data.map(function(type) {
       return {type: type };
     });
     $scope.selected = $scope.enum[0];
-    console.log('enum =', $scope.enum);
-  }, function errorCallback(response) {
-    console.log('err');
+  }, function error(res) {
+    console.log('error: ', res);
   });
 }]);
