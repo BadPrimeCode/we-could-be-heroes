@@ -6,7 +6,7 @@ var Hero = require('../public/assets/models/hero');
 
 // gets all the heroes
 router.get('/', function(req, res) {
-  console.log('in hero get');
+  console.log('getting heroes');
   Hero.find({}, function(err, heroResults) {
     if(err){
       console.log('error occurred:', err);
@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
     }else{
       res.send(heroResults);
     }
-  }); //end of find heroes
+  }); //end of find
 }); //end of router get
 
 // get power name
@@ -24,8 +24,8 @@ router.get('/enum', function(req, res) {
 
 // add new hero process
 router.post('/', function(req, res) {
-  console.log('in hero post');
-  console.log('req.body=', req.body);
+  console.log('in hero add');
+  console.log('req.body: ', req.body);
 
   var hero = req.body;
 
@@ -51,13 +51,13 @@ router.post('/', function(req, res) {
 
 // delete individual hero
 router.delete('/:id', function(req, res) {
-    console.log("params = ", req.params);
+    console.log("params: ", req.params);
     Hero.remove({"_id": req.params.id}, function(err) {
       if(err){
         console.log('error occurred:', err);
         res.sendStatus(500);
       }else{
-        console.log('removed=', req.params.id);
+        console.log('removed: ', req.params.id);
         res.sendStatus(200);
       }
     });

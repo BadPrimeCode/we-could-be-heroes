@@ -1,19 +1,16 @@
 <div ng-init="getHeroes()" ng-controller="heroesController" id="heroView">
     <div class="heroDiv" ng-repeat="hero in heroes">
       <div id="heroAlias">
-        Name: {{hero.alias}}
+        Alias: {{hero.alias}}
       </div>
-      <div id="heroFirstName">
-        Name: {{hero.first_name}}
-      </div>
-      <div id="heroLastName">
-        Name: {{hero.last_name}}
+      <div id="heroName">
+        Name: {{hero.first_name}} {{hero.last_name}}
       </div>
       <div id="heroCity">
-        Animal: {{hero.city}}
+        City: {{hero.city}}
       </div>
       <div id="heroPowerName">
-        Age: {{hero.power_name}}
+        Power Name: {{hero.power_name}}
       </div>
       <button ng-click="deleteHero(hero._id)" type="button" name="button">Delete</button>
     </div>
