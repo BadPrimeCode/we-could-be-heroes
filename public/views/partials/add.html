@@ -1,0 +1,20 @@
+<div ng-controller="addHeroController">
+    <form>
+      <label for="alias"> Alias:
+        <input ng-model="alias" id="alias" type="text">
+      </label>
+      <label for="first_name"> First Name:
+        <input ng-model="first_name" id="first_name" type="text">
+      </label>
+      <label for="last_name"> Last Name:
+        <input ng-model="last_name" id="last_name" type="text">
+      </label>
+      <label for="city"> Age:
+        <input ng-model="city" id="city" type="text">
+      </label>
+      <label for="power_name"> Power Name:
+      <select ng-model="power_name" ng-options="e as e.type for e in enum track by e.type" name="power_name"></select>
+      </label>
+      <input ng-click="addHero(alias, first_name, last_name, city, power_name)" type="button" value="Add new" id="addnew">
+    </form>
+  </div>

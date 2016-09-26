@@ -8,9 +8,11 @@
     "start": "node server/app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ian Coldwater",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mongoose": "^4.6.1"
