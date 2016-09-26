@@ -9,5 +9,5 @@ var heroSchema = new Schema({
   power_name: {type: String, enum: ['Invisibility', 'Flight', 'Super Speed', 'Heat Vision', 'Super Strength', 'Accelerated Healing', 'Power Blast', 'Animal Affinity']}
 });
 
-var heroModel = mongoose.model('heroes', heroSchema);
-module.exports = heroModel;
+var Hero = mongoose.model('heroes', heroSchema);
+module.exports = Hero;

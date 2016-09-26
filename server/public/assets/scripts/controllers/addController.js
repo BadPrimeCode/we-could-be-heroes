@@ -1,6 +1,6 @@
-myApp.controller('addHeroController', ['$scope', '$http', function($scope, $http) {
+myApp.controller('addController', ['$scope', '$http', function($scope, $http) {
   $scope.addHero = function(alias, first_name, last_name, city, power_name) {
-    var dataToSend ={
+    var objectToSend ={
       alias: alias,
       first_name: first_name,
       last_name: last_name,
@@ -8,13 +8,13 @@ myApp.controller('addHeroController', ['$scope', '$http', function($scope, $http
       power_name: power_name.type
     };
 
-    console.log('data to send: ', dataToSend);
+    console.log('hero to send: ', objectToSend);
 
     //ajax call
     $http({
       method: 'POST',
       url: '/heroes',
-      data: dataToSend
+      data: objectToSend
     }).then(function successCallback(response) {
       console.log('post resp =', response);
     }, function errorCallback(response) {

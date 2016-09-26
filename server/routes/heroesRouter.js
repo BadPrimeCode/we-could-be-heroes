@@ -2,17 +2,17 @@ var express = require('express');
 var router = express.Router();
 
 // require heroes model
-var Hero = require('../models/heroModel');
+var Hero = require('../public/assets/models/hero');
 
 // gets all the heroes
 router.get('/', function(req, res) {
   console.log('in hero get');
-  Hero.find({}, function(err, foundHeroes) {
+  Hero.find({}, function(err, heroResults) {
     if(err){
       console.log('error occurred:', err);
       res.sendStatus(500);
     }else{
-      res.send(foundHeroes);
+      res.send(heroResults);
     }
   }); //end of find heroes
 }); //end of router get
